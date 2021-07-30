@@ -67,26 +67,12 @@ clear
 done
 if [ "$choix" = "o" ] ; then
 git clone https://github.com/maxbrd/BigDumper.git
+echo $RS"Merci de déplacer les 3 dossiers dans /root
+puis appuyez sur Entrée."$NS
+read""
+clear
 chmod +x /root/BigDumper/bigdumperinstall
 /root/BigDumper/bigdumperinstall
-elif [ "$choix" = "n" ] ; then
-clear
-fi
-
-#installation de TheLazyScript
-choix=""
-clear
-until [ "$choix" = "o" ] || [ "$choix" = "n" ] ; do
-echo $RS"Voulez-vous installer TheLazyScript? (o/n)"$NS
-read choix
-clear
-done
-if [ "$choix" = "o" ] ; then
-git clone https://github.com/maxbrd/lscript.git
-chmod +x /root/lscript/install.sh
-cd /root/lscript
-./install.sh
-cd ../
 elif [ "$choix" = "n" ] ; then
 clear
 fi
@@ -116,6 +102,23 @@ elif [ "$choix" = "n" ] ; then
 clear
 fi
 
+#installation de TheLazyScript
+choix=""
+clear
+until [ "$choix" = "o" ] || [ "$choix" = "n" ] ; do
+echo $RS"Voulez-vous installer TheLazyScript? (o/n)"$NS
+read choix
+clear
+done
+if [ "$choix" = "o" ] ; then
+git clone https://github.com/maxbrd/lscript.git
+chmod +x /root/lscript/install.sh
+cd /root/lscript
+./install.sh
+cd ../
+elif [ "$choix" = "n" ] ; then
+clear
+fi
 
 
 clear

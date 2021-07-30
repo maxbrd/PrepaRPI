@@ -36,10 +36,11 @@ echo "autologin-user=root"
 echo "autolog-user-timeout=0"
 echo $YS"Appuyer sur Entrée pour continuer"$NS
 read ""
+clear
 nano /etc/lightdm/lightdm.conf  
-
 
 echo $VS"UNE FOIS REDEMARRE, LANCEZ $RSPrepa-2."$NS
 echo $YS"Appuyer sur Entrée pour continuer"$NS
 read ""
+clear
 reboot

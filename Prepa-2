@@ -14,6 +14,13 @@ apt-get clean
 apt-get update
 apt-get -y install git binutils make csh g++ sed gawk autoconf automake autotools-dev barrier libglib2.0-dev libnfc* libnfc-dev liblzma-dev libnfc-bin libusb-dev libtool gnome-terminal pyrit hexedit bless leafpad subversion gvfs-backends
 
+##Mettre en FR##
+dpkg-reconfigure locales
+echo $YS"choisir fr_FR.UTF-8 UTF-8
+puis encore le même choix"$NS
+
+
+
 #installation de Samba
 choix=""
 clear
@@ -102,7 +109,7 @@ Comment=Tool to read the contents of smart card
 Exec=cardpeek
 Icon=cardpeek-logo
 Path=
-StartupNotify=false" >> /root/Bureau/CardPeek.desktop
+StartupNotify=false" >> /root/Desktop/CardPeek.desktop
 clear
 elif [ "$choix" = "n" ] ; then
 clear
@@ -112,3 +119,5 @@ fi
 
 clear
 echo "TOUT EST INSTALLE."
+sleep 5
+exit

@@ -15,12 +15,15 @@ apt-get update
 apt-get -y install git binutils make csh g++ sed gawk autoconf automake autotools-dev barrier libglib2.0-dev libnfc* libnfc-dev liblzma-dev libnfc-bin libusb-dev libtool gnome-terminal pyrit hexedit bless leafpad subversion gvfs-backends
 
 ##Mettre en FR##
-dpkg-reconfigure locales
 echo $YS"choisir fr_FR.UTF-8 UTF-8
-puis encore le même choix"$NS
+puis encore le même choix
+Appuyez sur Entrée pour continuer."$NS
+read"" 
+clear
+dpkg-reconfigure locales
 
-
-
+cd ../
+cd /root
 #installation de Samba
 choix=""
 clear
@@ -63,7 +66,6 @@ read choix
 clear
 done
 if [ "$choix" = "o" ] ; then
-cd ../
 git clone https://github.com/maxbrd/BigDumper.git
 chmod +x /root/BigDumper/bigdumperinstall
 /root/BigDumper/bigdumperinstall
@@ -80,7 +82,6 @@ read choix
 clear
 done
 if [ "$choix" = "o" ] ; then
-cd ../
 git clone https://github.com/maxbrd/lscript.git
 chmod +x /root/lscript/install.sh
 cd /root/lscript
@@ -118,6 +119,4 @@ fi
 
 
 clear
-echo "TOUT EST INSTALLE."
-sleep 5
-exit
+echo $YS"TOUT EST INSTALLE."$NS

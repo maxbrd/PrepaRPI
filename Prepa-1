@@ -1,0 +1,49 @@
+#!/bin/sh
+#PrepaRPI_1
+
+TERMINALTITLE="INSTALLATION DE TOUS LES MODULES"
+##COULEURS##
+RS="\033[1;31m" #rouge gras
+NS="\033[0m" #normal
+YS="\033[1;33m" #jaune gras
+ys="\033[0;33m" #jaune
+VS="\033[1;32m" #vert gras
+
+clear
+echo $RS"Mot de passe par défaut: kali"$NS
+sudo -i
+
+#installation de root
+choix=""
+clear
+until [ "$choix" = "o" ] || [ "$choix" = "n" ] ; do
+echo $RS"Voulez-vous ajouter l'admin Root? (o/n)"$NS
+read choix
+clear
+done
+if [ "$choix" = "o" ] ; then
+clear
+echo $RS"Mettre toor comme mot de passe."$NS
+passwd root
+clear
+elif [ "$choix" = "n" ] ; then
+clear
+fi
+echo "si existant ajouter un # à la ligne:"
+echo "auth required pas_succeed_if.so user != root quiet_success"
+echo $YS"Appuyer sur Entrée pour continuer"$NS
+read ""
+nano /etc/pam.d/lightdm-autologin
+clear
+echo "Dans [Section Seat:*] enlever le # à"
+echo "autologin-user=root"
+echo "autolog-user-timeout=0"
+echo $YS"Appuyer sur Entrée pour continuer"$NS
+read ""
+nano /etc/lightdm/lightdm.conf  
+
+
+echo $VS"UNE FOIS REDEMARRE, LANCEZ $RSPrepa-2."$NS
+echo $YS"Appuyer sur Entrée pour continuer"$NS
+read ""
+reboot

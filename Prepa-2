@@ -1,5 +1,5 @@
 #!/bin/sh
-#PrepaRPI
+#PrepaRPI_2
 
 TERMINALTITLE="INSTALLATION DE TOUS LES MODULES"
 ##COULEURS##
@@ -13,37 +13,6 @@ VS="\033[1;32m" #vert gras
 apt-get clean
 apt-get update
 apt-get -y install git binutils make csh g++ sed gawk autoconf automake autotools-dev barrier libglib2.0-dev libnfc* libnfc-dev liblzma-dev libnfc-bin libusb-dev libtool gnome-terminal pyrit hexedit bless leafpad subversion gvfs-backends
-
-#installation de root
-choix=""
-clear
-until [ "$choix" = "o" ] || [ "$choix" = "n" ] ; do
-echo $RS"Voulez-vous ajouter l'admin Root? (o/n)"$NS
-read choix
-clear
-done
-if [ "$choix" = "o" ] ; then
-echo $RS"Mot de passe par défaut: kali"$NS
-sudo -i
-clear
-echo $RS"Mettre toor comme mot de passe."$NS
-passwd root
-clear
-elif [ "$choix" = "n" ] ; then
-clear
-fi
-echo "si existant ajouter un # à la ligne:"
-echo "auth required pas_succeed_if.so user != root quiet_success"
-echo $YS"Appuyer sur Entrée pour continuer"$NS
-read ""
-nano /etc/pam.d/lightdm-autologin
-clear
-echo "Dans [Section Seat:*] enlever le # à"
-echo "autologin-user=root"
-echo "autolog-user-timeout=0"
-echo $YS"Appuyer sur Entrée pour continuer"$NS
-read ""
-nano /etc/lightdm/lightdm.conf  
 
 #installation de Samba
 choix=""

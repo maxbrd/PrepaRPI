@@ -24,6 +24,7 @@ passwd root
 clear
 echo "
 PermitRootLogin yes" >> /etc/samba/smb.conf
+service ssh restart
 elif [ "$choix" = "n" ] ; then
 clear
 fi

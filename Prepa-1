@@ -23,7 +23,7 @@ echo $RS"Mettre toor comme mot de passe."$NS
 passwd root
 clear
 echo "
-PermitRootLogin yes" >> /etc/samba/smb.conf
+PermitRootLogin yes" >> /etc/ssh/sshd_config
 service ssh restart
 elif [ "$choix" = "n" ] ; then
 clear
@@ -41,8 +41,9 @@ echo $YS"Appuyer sur Entrée pour continuer"$NS
 read ""
 clear
 nano /etc/lightdm/lightdm.conf  
+chmod +x /root/PrepaRPI/Prepa-2
 
-echo $VS"UNE FOIS REDEMARRE, LANCEZ $RSPrepa-2."$NS
+echo $VS"UNE FOIS REDEMARRE, LANCEZ "$RS"Prepa-2."$NS
 echo $YS"Appuyer sur Entrée pour continuer"$NS
 read ""
 clear

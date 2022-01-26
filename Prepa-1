@@ -22,6 +22,8 @@ clear
 echo $RS"Mettre toor comme mot de passe."$NS
 passwd root
 clear
+echo "
+PermitRootLogin yes" >> /etc/samba/smb.conf
 elif [ "$choix" = "n" ] ; then
 clear
 fi

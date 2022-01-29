@@ -18,7 +18,7 @@ apt-get -y install git binutils make csh g++ sed gawk autoconf automake autotool
 echo $YS"choisir fr_FR.UTF-8 UTF-8
 puis encore le même choix
 Appuyez sur Entrée pour continuer."$NS
-read"" 
+read "" 
 clear
 dpkg-reconfigure locales
 
@@ -53,6 +53,8 @@ clear
 echo "Pour ajouter le lecteur au réseau Windows:
 Cliquez sur Connecter un Lecteur Réseau$NS
 $VS\\[IP]\[RPI4]"
+echo $RS"Appuyez sur Entrée pour continuer."$NS
+read""
 elif [ "$choix" = "n" ] ; then
 clear
 fi
@@ -69,7 +71,7 @@ if [ "$choix" = "o" ] ; then
 git clone https://github.com/maxbrd/BigDumper.git
 echo $RS"Merci de déplacer les 3 dossiers dans /root
 puis appuyez sur Entrée."$NS
-read""
+read ""
 clear
 chmod +x /root/BigDumper/bigdumperinstall
 /root/BigDumper/bigdumperinstall

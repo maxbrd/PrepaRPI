@@ -22,8 +22,12 @@ clear
 echo $RS"Mettre toor comme mot de passe."$NS
 passwd root
 clear
-echo "
-PermitRootLogin yes" >> /etc/ssh/sshd_config
+echo $VS"Mettre "$RS"PermitRootLogin yes"$VS""$NS
+echo $YS"Appuyer sur Entrée pour continuer"$NS
+read ""
+nano /etc/ssh/sshd_config
+#echo "
+#PermitRootLogin yes" >> /etc/ssh/sshd_config
 service ssh restart
 elif [ "$choix" = "n" ] ; then
 clear

@@ -26,6 +26,7 @@ echo $VS"Mettre "$RS"PermitRootLogin yes"$VS""$NS
 echo $YS"Appuyer sur Entrée pour continuer"$NS
 read ""
 nano /etc/ssh/sshd_config
+clear
 #echo "
 #PermitRootLogin yes" >> /etc/ssh/sshd_config
 service ssh restart
